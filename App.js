@@ -6,20 +6,20 @@
  * @flow strict-local
  */
 
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import React, {Component} from 'react';
+import {View} from 'react-native';
+import {
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator,
+} from 'react-navigation';
 import Header from './src/components/Header';
-import Home from './src/components/Home';
-import Albums from './src/components/Albums';
-import Favourites from './src/components/Favourites';
 import ShowPhoto from './src/components/ShowPhoto';
+import BottomNavigation from './BottomNavigation';
 
 let routeConfigs = {
-  Home: { screen: Home },
-  Albums: { screen: Albums },
-  Favourites: { screen: Favourites },
-  PhotoItem: { screen: ShowPhoto }
+  BottomNavigation: {screen: BottomNavigation},
+  PhotoItem: {screen: ShowPhoto},
 };
 
 let tabNavigationConfig = {
@@ -35,12 +35,14 @@ let tabNavigationConfig = {
     style: {
       backgroundColor: 'white',
       padding: -10,
-      marginTop: 5
-    }
-  }
+      marginTop: 5,
+    },
+  },
+  headerMode: 'none',
+  initialRouteName: 'BottomNavigation',
 };
 
-const TabNavigator = createBottomTabNavigator(routeConfigs, tabNavigationConfig);
+const TabNavigator = createStackNavigator(routeConfigs, tabNavigationConfig);
 
 const AppContainer = createAppContainer(TabNavigator);
 
@@ -50,7 +52,7 @@ class App extends Component {
       <View style={{flex: 1}}>
         <Header />
         <View style={{flex: 9}}>
-         <AppContainer />
+          <AppContainer />
         </View>
       </View>
     );
