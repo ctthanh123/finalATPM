@@ -11,7 +11,7 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     headerTitle: {
-        fontSize: 24,
+        fontSize: 22,
         fontWeight: '700',
         marginLeft: 10,
         color: 'white'
@@ -21,11 +21,16 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     icon1: {
-        width: 40,
-        height: 40
+        width: 35,
+        height: 35
     },
     icon2: {
-        width: 69,
-        height: 69
+        width: 65,
+        height: 65
+    },
+    icon3: {
+        width: 25,
+        height: 25,
+        tintColor: 'white'
     }
 });

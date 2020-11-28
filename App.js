@@ -10,53 +10,38 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import {
   createAppContainer,
-  createBottomTabNavigator,
   createStackNavigator,
 } from 'react-navigation';
-import Header from './src/components/Header';
-import ShowPhoto from './src/components/ShowPhoto';
+
+//import Header from './src/components/Header';
+//import ShowPhoto from './src/components/ShowPhoto';
 import BottomNavigation from './BottomNavigation';
+import TouchIDLogin from './src/components/TouchIDLogin';
 
 let routeConfigs = {
-  BottomNavigation: {screen: BottomNavigation},
-  PhotoItem: {screen: ShowPhoto},
+  BottomNavigation: { screen: BottomNavigation },
+  //PhotoItem: { screen: ShowPhoto },
+  Login: { screen: TouchIDLogin }
 };
 
-let tabNavigationConfig = {
-  animationEnable: true,
-  swipeEnabled: true,
-  tabBarOptions: {
-    showLabel: true,
-    showIcon: true,
-    activeTintColor: 'blue',
-    labelStyle: {
-      fontSize: 14,
-    },
-    style: {
-      backgroundColor: 'white',
-      padding: -10,
-      marginTop: 5,
-    },
-  },
-  headerMode: 'none',
-  initialRouteName: 'BottomNavigation',
+let navigationConfig = {
+  headerMode: 'none', 
+  initialRouteName: 'Login', 
 };
 
-const TabNavigator = createStackNavigator(routeConfigs, tabNavigationConfig);
+const StackNavigator = createStackNavigator(routeConfigs, navigationConfig);
 
-const AppContainer = createAppContainer(TabNavigator);
+const AppContainer = createAppContainer(StackNavigator);
 
 class App extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header />
-        <View style={{flex: 9}}>
-          <AppContainer />
-        </View>
+        <AppContainer />
       </View>
     );
   }
 }
 
 export default App;
+

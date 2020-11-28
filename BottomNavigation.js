@@ -1,5 +1,5 @@
-import {Platform} from 'react-native';
-import {createBottomTabNavigator} from 'react-navigation';
+import { Platform } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
 
 import Home from './src/components/Home';
 import Albums from './src/components/Albums';
@@ -13,19 +13,21 @@ const Navigation = createBottomTabNavigator(
   },
   {
     initialRouteName: 'Home',
+    headerMode: 'none',
     tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: false,
-    tabBarOptions: {
-      showLabel: true,
+    animationEnabled: true,
+    swipeEnabled: true, 
+    tabBarOptions: { 
+      showLabel: true, 
       showIcon: true,
-      inactiveTintColor: '#9B9B9B',
-      style: {backgroundColor: '#fff', height: 55},
-      labelStyle: {fontSize: Platform.OS === 'ios' ? 13 : 9},
-      iconStyle: {size: 5},
-      tabStyle: {backgroundColor: 'white'},
+      inactiveTintColor: '#9B9B9B', 
+      style: {backgroundColor: '#fff', height: 55}, 
+      labelStyle: {fontSize: Platform.OS === 'ios' ? 13 : 14}, 
+      iconStyle: {size: 5}, 
+      tabStyle: {backgroundColor: 'white'}, 
     },
   },
 );
 
 export default Navigation;
+
