@@ -17,7 +17,8 @@
     "react-native-modalbox": "^2.0.2",
     "react-native-reanimated": "^1.13.2",
     "react-native-screens": "^2.15.0",
-    "react-navigation": "3.0.8"
+    "react-native-touch-id": "^4.4.1",
+    "react-navigation": "3.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",

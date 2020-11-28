@@ -6,55 +6,42 @@
  * @flow strict-local
  */
 
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import Header from './src/components/Header';
-import Home from './src/components/Home';
-import Albums from './src/components/Albums';
-import Favourites from './src/components/Favourites';
-import ShowPhoto from './src/components/ShowPhoto';
+import React, {Component} from 'react';
+import {View} from 'react-native';
+import {
+  createAppContainer,
+  createStackNavigator,
+} from 'react-navigation';
+
+//import Header from './src/components/Header';
+//import ShowPhoto from './src/components/ShowPhoto';
+import BottomNavigation from './BottomNavigation';
+import TouchIDLogin from './src/components/TouchIDLogin';
 
 let routeConfigs = {
-  Home: { screen: Home },
-  Albums: { screen: Albums },
-  Favourites: { screen: Favourites },
-  PhotoItem: { screen: ShowPhoto }
+  BottomNavigation: { screen: BottomNavigation },
+  //PhotoItem: { screen: ShowPhoto },
+  Login: { screen: TouchIDLogin }
 };
 
-let tabNavigationConfig = {
-  animationEnable: true,
-  swipeEnabled: true,
-  tabBarOptions: {
-    showLabel: true,
-    showIcon: true,
-    activeTintColor: 'blue',
-    labelStyle: {
-      fontSize: 14,
-    },
-    style: {
-      backgroundColor: 'white',
-      padding: -10,
-      marginTop: 5
-    }
-  }
+let navigationConfig = {
+  headerMode: 'none', 
+  initialRouteName: 'Login', 
 };
 
-const TabNavigator = createBottomTabNavigator(routeConfigs, tabNavigationConfig);
+const StackNavigator = createStackNavigator(routeConfigs, navigationConfig);
 
-const AppContainer = createAppContainer(TabNavigator);
+const AppContainer = createAppContainer(StackNavigator);
 
 class App extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header />
-        <View style={{flex: 9}}>
-         <AppContainer />
-        </View>
+        <AppContainer />
       </View>
     );
   }
 }
 
 export default App;
+
