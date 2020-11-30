@@ -48,7 +48,7 @@ export default StyleSheet.create({
     },
     text: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 12,
         marginTop: 15,
         fontWeight: '700'
     },
@@ -56,6 +56,19 @@ export default StyleSheet.create({
         width: width / 5,
         height: width / 5,
         tintColor: '#fff'
+    },
+
+    button3: {
+        marginTop: 10,
+        backgroundColor: '#E08283',
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+        paddingTop: width / 30,
+        paddingBottom: width / 30,
+        paddingLeft: width / 5,
+        paddingRight: width / 5,
+        borderRadius: 20,
     }
 });
 
