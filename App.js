@@ -17,11 +17,13 @@ import {
 //import ShowPhoto from './src/components/ShowPhoto';
 import BottomNavigation from './BottomNavigation';
 import TouchIDLogin from './src/components/TouchIDLogin';
+import PatternLogin from './src/components/PatternLogin';
 
 let routeConfigs = {
   BottomNavigation: { screen: BottomNavigation },
   //PhotoItem: { screen: ShowPhoto },
-  Login: { screen: TouchIDLogin }
+  Login: { screen: TouchIDLogin },
+  Pattern: { screen: PatternLogin }
 };
 
 let navigationConfig = {

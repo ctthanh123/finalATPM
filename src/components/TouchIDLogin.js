@@ -85,8 +85,17 @@ class TouchIDLogin extends Component {
                     <Image source={require('../assets/finger.png')} style={styles.finger} />
                 </Button>
                 <Text style={styles.text}>
-                    Mở khóa bằng VÂN TAY
+                    Hoặc
                 </Text>
+
+                <Button 
+                    style={styles.button3}
+                    onPress={() => {
+                        this.props.navigation.navigate("Pattern");
+                    }}
+                >
+                   SỬ DỤNG PATTERN
+                </Button>
             </View>
         );
     }
